@@ -3,6 +3,8 @@ package pancor.cucumber.base;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -26,5 +28,11 @@ public class AppModule {
     MyPreferenceManager provideMyPreferenceManager(){
 
         return new MyPreferenceManager(app);
+    }
+
+    @Provides @Singleton
+    FirebaseAnalytics provideFirebaseAnalytics(){
+
+        return FirebaseAnalytics.getInstance(app);
     }
 }

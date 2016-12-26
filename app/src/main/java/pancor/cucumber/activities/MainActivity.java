@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import javax.inject.Inject;
 
 import pancor.cucumber.R;
@@ -17,7 +19,10 @@ public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @Inject
-    MyPreferenceManager preferenceManager;
+    MyPreferenceManager mMyPreferenceManager;
+
+    @Inject
+    FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
