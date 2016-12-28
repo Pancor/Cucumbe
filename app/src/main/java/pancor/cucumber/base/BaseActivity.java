@@ -50,6 +50,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         setupToolbar(null);
     }
 
+
+    /**
+     * @param title -> toolbar's title
+     */
     protected void setupToolbar(@Nullable String title){
 
         if (mToolbar != null){
@@ -58,7 +62,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
             if (title != null)
                 getSupportActionBar().setTitle(title);
-
         }
     }
 
@@ -82,7 +85,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         String fragmentTag = mFragment.getClass().getSimpleName();
 
-        transaction.replace(R.id.containerLayout, mFragment, fragmentTag);
+        transaction.add(R.id.containerLayout, mFragment, fragmentTag);
 
         if (addToBackStack)
             transaction.addToBackStack(fragmentTag);
