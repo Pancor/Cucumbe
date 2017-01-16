@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,9 +26,10 @@ public class LoginFormFragment extends Fragment implements LoginForm.View {
 
     //ButterKnife unbinder
     private Unbinder unbinder;
-
     @BindView(R.id.emailView) AutoCompleteTextView emailView;
+    @BindView(R.id.emailLayout) TextInputLayout emailLayout;
     @BindView(R.id.passwordView) TextInputEditText passwordView;
+    @BindView(R.id.passwordLayout) TextInputLayout passwordLayout;
     @BindView(R.id.progressBar) ProgressBar progressBar;
     @BindView(R.id.loginFormLayout) LinearLayout loginFormLayout;
 
@@ -69,10 +71,11 @@ public class LoginFormFragment extends Fragment implements LoginForm.View {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        unbinder = ButterKnife.bind(this, view);
+
     }
 
-    @Override public void onDestroyView() {
+    @Override
+    public void onDestroyView() {
         super.onDestroyView();
 
         unbinder.unbind();
@@ -86,13 +89,17 @@ public class LoginFormFragment extends Fragment implements LoginForm.View {
     }
 
     @Override
-    public void wrongEmail() {
+    public void wrongEmail(String error) {
 
+        emailLayout.setError(error);
+        emailView.requestFocus();
     }
 
     @Override
-    public void wrongPassword() {
+    public void wrongPassword(String error) {
 
+        passwordLayout.setError(error);
+        passwordView.requestFocus();
     }
 
     @Override
@@ -104,7 +111,12 @@ public class LoginFormFragment extends Fragment implements LoginForm.View {
     @OnClick(R.id.email_sign_in_button)
     void signInByEmail(){
 
-        mPresenter.signInByEmail(emailView.getText().toString(),
+        //reset errors
+        emailLayout.setError(null);
+        passwordLayout.setError(null);
+
+        mPresenter.signInByEmail(
+                emailView.getText().toString(),
                 passwordView.getText().toString());
     }
 }
