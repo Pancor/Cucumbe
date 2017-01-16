@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "573616906835",
+    "firebase_url": "https://cucumber-186e8.firebaseio.com",
+    "project_id": "cucumber-186e8",
+    "storage_bucket": "cucumber-186e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573616906835:android:e0c0e573565ef2fe",
+        "android_client_info": {
+          "package_name": "pancor.cucumber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573616906835-t6llm2b79eamithdgk3gjceqqd0ou2iq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pancor.cucumber",
+            "certificate_hash": "6D3861878D17D7F4396356F35F96E030A61EE058"
+          }
+        },
+        {
+          "client_id": "573616906835-f0gvh1s2kg87ca0baol9moin5mhej4tv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCS80koxeyBEHPVKrBz73dbTsGBDTFgfk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573616906835-f0gvh1s2kg87ca0baol9moin5mhej4tv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
